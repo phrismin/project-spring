@@ -10,14 +10,8 @@ public class TestSpring {
         )) {
 
             MusicPlayer musicPlayer1 = context.getBean("musicPlayer", MusicPlayer.class);
-            MusicPlayer musicPlayer2 = context.getBean("musicPlayer", MusicPlayer.class);
-
-            musicPlayer1.setVolume(20);
-            musicPlayer2.setVolume(500);
 
             System.out.println(musicPlayer1.getVolume());
-            System.out.println(musicPlayer2.getVolume());
-
         }
     }
 }

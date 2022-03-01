@@ -12,26 +12,17 @@
     <bean id="musicBean1"
           class="com.rudoy.project.RockMusic">
     </bean>
+
     <bean id="musicBean2"
-          class="com.rudoy.project.FolkMusic">
+          class="com.rudoy.project.FolkMusic"
+          init-method="doMyInit"
+          destroy-method="doMyDestroy"
+          factory-method="getFolkMusic">
     </bean>
+
     <bean id="musicBean3"
           class="com.rudoy.project.ClassicMusic">
     </bean>
 
-    <!--     DI-->
-    <bean id="musicPlayer" class="com.rudoy.project.MusicPlayer"
-          scope="prototype">
-        <property name="music">
-            <list>
-                <ref bean="musicBean1"/>
-                <ref bean="musicBean2"/>
-                <ref bean="musicBean3"/>
-            </list>
-        </property>
-
-        <property name="name" value="${musicPlayer.name}"/>
-        <property name="volume" value="${musicPlayer.value}"/>
-    </bean>
 
 </beans>
