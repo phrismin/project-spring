@@ -4,19 +4,14 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class TestSpring {
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
+
+        try (ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
                 "applicationContext.xml"
-        );
-        try {
-            Music music = context.getBean("musicBean", Music.class);
+        )) {
 
-            // DI
-            MusicPlayer musicPlayer = new MusicPlayer(music);
-
+            MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
             musicPlayer.playMusic();
 
-        } finally {
-            context.close();
         }
     }
 }
