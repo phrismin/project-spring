@@ -9,20 +9,7 @@
 
     <context:property-placeholder location="musicPlayer.properties"/>
 
-    <bean id="musicBean1"
-          class="com.rudoy.project.RockMusic">
-    </bean>
-
-    <bean id="musicBean2"
-          class="com.rudoy.project.FolkMusic"
-          init-method="doMyInit"
-          destroy-method="doMyDestroy"
-          factory-method="getFolkMusic">
-    </bean>
-
-    <bean id="musicBean3"
-          class="com.rudoy.project.ClassicMusic">
-    </bean>
+    <context:component-scan base-package="com.rudoy.project"/>
 
 
 </beans>

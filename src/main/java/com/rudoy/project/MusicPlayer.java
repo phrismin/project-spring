@@ -1,9 +1,7 @@
 package com.rudoy.project;
 
-import java.util.List;
-
 public class MusicPlayer {
-    private List<Music> musicList;
+    private Music music;
     private String name;
     private int volume;
 
@@ -11,14 +9,12 @@ public class MusicPlayer {
     }
 
     // IoC
-    public void setMusic(List<Music> musicList) {
-        this.musicList = musicList;
+    public void setMusic(Music music) {
+        this.music = music;
     }
 
     public void playMusic() {
-        for (Music music : musicList) {
-            System.out.println("Playing: " + music.getSong());
-        }
+        System.out.println("Playing: " + music.getSong());
     }
 
     public String getName() {

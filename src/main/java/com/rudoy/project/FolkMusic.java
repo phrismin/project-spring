@@ -1,5 +1,8 @@
 package com.rudoy.project;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class FolkMusic implements Music {
     private FolkMusic() {
     }
