@@ -7,6 +7,7 @@ import java.util.List;
 
 @Component
 public class RockMusic implements Music {
+
     @Override
     public List<String> getSong() {
         List<String> songs = new ArrayList<>();
