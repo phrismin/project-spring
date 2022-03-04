@@ -2,25 +2,18 @@ package com.rudoy.project;
 
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
 public class FolkMusic implements Music {
-    private FolkMusic() {
-    }
-
-    public static FolkMusic getFolkMusic() {
-        return new FolkMusic();
-    }
-
-    public void doMyInit() {
-        System.out.println("Doing my initializatioin");
-    }
-
-    public void doMyDestroy() {
-        System.out.println("Doing my destroying");
-    }
 
     @Override
-    public String getSong() {
-        return "Love, brothers, love";
+    public List<String> getSong() {
+        List<String> songs = new ArrayList<>();
+        songs.add("Love, brothers, love");
+        songs.add("Folk music1");
+        songs.add("Folk music2");
+        return songs;
     }
 }
